@@ -4,6 +4,6 @@
   "semi": false,
   "singleQuote": true,
   "jsxSingleQuote": true,
-  "plugins": [],
+  "plugins": ["prettier-plugin-tailwindcss"],
   "pluginSearchDirs": false
 }

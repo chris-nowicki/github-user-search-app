@@ -1,3 +1,51 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Space Mono', monospace;
+  }
+
+  body {
+    background-color: #f6f8ff;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+
+  .dark body {
+    background-color: #141d2f;
+  }
+
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 38px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  h4 {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+
+.boxShadow {
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+}
