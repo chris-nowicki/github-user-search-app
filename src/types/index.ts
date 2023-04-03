@@ -4,6 +4,8 @@ export interface DataContextTypes {
   userData: any
   setUserData: (data: any) => void
   handleSearch: (e: FormEvent, userName: string | undefined) => void
+  error: boolean | null
+  setError: (error: boolean) => void
 }
 
 export interface UserData {

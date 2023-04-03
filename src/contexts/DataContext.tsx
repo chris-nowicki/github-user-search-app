@@ -25,21 +25,27 @@ export const DataContext = createContext<DataContextTypes>({
   userData: null,
   setUserData: () => null,
   handleSearch: () => null,
+  error: null,
+  setError: () => null,
 })
 
 export function DataProvider({ children }: { children: JSX.Element }) {
   const [userData, setUserData] = useState(defaultData)
+  const [error, setError] = useState(false)
 
   const handleSearch = (e: FormEvent, userName: string | undefined) => {
     e.preventDefault()
-
+    setError(false)
+    
     axios
       .get(`https://api.github.com/users/${userName}`)
       .then((res) => {
-        console.log(res.data)
         setUserData(res.data)
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        console.log(err)
+        setError(true)
+      })
   }
 
   const value: DataContextTypes = useMemo(
@@ -47,8 +53,10 @@ export function DataProvider({ children }: { children: JSX.Element }) {
       userData,
       setUserData,
       handleSearch,
+      error,
+      setError,
     }),
-    [userData]
+    [userData, error]
   )
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>
