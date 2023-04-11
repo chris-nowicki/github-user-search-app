@@ -21,7 +21,7 @@ export default function Search() {
           type='text'
           ref={userName}
           placeholder='Search GitHub username…'
-          className='h-[25px] w-[254px] border-none bg-transparent placeholder:text-blue-200 focus:ring-transparent dark:placeholder:text-white-100 sm:text-[13px] md:text-[16px]'
+          className='h-[25px] w-[254px] border-none bg-transparent placeholder:text-blue-200 dark:text-white-100 focus:ring-transparent dark:placeholder:text-white-100 sm:text-[13px] md:text-[16px]'
         />
         <div className='flex items-center gap-6'>
           {error && (

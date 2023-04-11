@@ -26,7 +26,9 @@ export default function UserInfo() {
           <div className='flex w-full justify-between sm:flex-col lg:flex-row'>
             {/* name and date joined */}
             <div className='flex flex-col text-blue-500 dark:text-white-100'>
-              <h1 className='sm:hidden md:block'>{userData.name}</h1>
+              <h1 className='sm:hidden md:block'>
+                {userData.name ? userData.name : userData.login}
+              </h1>
               <h3 className='font-bold sm:block md:hidden'>{userData.name}</h3>
               <a
                 href='https://www.github.com'

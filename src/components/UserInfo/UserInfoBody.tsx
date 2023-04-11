@@ -57,8 +57,8 @@ export default function UserInfoBody() {
           >
             <Website />
             {userData.blog ? (
-              <a href={`https://${userData.blog}`} target='_blank'>
-                {userData.blog}
+              <a href={userData.blog} target='_blank'>
+                {userData.blog.split('//')[1]}
               </a>
             ) : (
               'Not Available'
